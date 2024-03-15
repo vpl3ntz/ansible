@@ -1,0 +1,21 @@
+version: '3'
+services:
+  controller:
+    container_name: controller
+    build: .
+    command: ["tail", "-f", "/dev/null"]
+    hostname: controller
+    volumes:
+      - .:/root/ansible
+
+  node1:
+    container_name: node1
+    build: .
+    command: [ "tail", "-f", "/dev/null" ]
+    hostname: node1
+
+  node2:
+    container_name: node2
+    build: .
+    command: [ "tail", "-f", "/dev/null" ]
+    hostname: node2
